@@ -3,16 +3,15 @@
 CProcessHandler::CProcessHandler(QObject *parent)
 	: QObject(parent)
 {
-	QString program = "C:/Users/Fabian/Documents/Tests/ConsolePrinter/Win32/Debug/ConsolePrinter.exe";
+	//QString program = "C:/Users/Fabian/Documents/Tests/ConsolePrinter/Win32/Debug/ConsolePrinter.exe";
 	myProcess = new QProcess(this);
 
 	myProcess->setProcessChannelMode(QProcess::ForwardedChannels);
 
 	//connect(myProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(processOutput()));
-	myProcess->execute(program);  
-#ifndef _WIN32
+	//myProcess->execute(program);  
 	myProcess->execute("/home/pi/SMA/QuerySMA.sh");
-#endif
+
 
 	//if (!myProcess->waitForStarted())
 	//	qDebug() << "Cant start the programm";
