@@ -13,7 +13,7 @@ CProcessHandler::CProcessHandler(QObject *parent)
 	//myProcess->execute(program);  
 
 	//myProcess->setWorkingDirectory("~/SMA");
-	myProcess->execute("/home/pi/SMA/SMAspot/SMAspot", QStringList() << "v");
+	myProcess->execute("/home/pi/SMA/SMAspot/SMAspot", QStringList() << "-v");
 
 
 	//if (!myProcess->waitForStarted())
