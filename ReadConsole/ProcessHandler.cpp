@@ -12,7 +12,7 @@ CProcessHandler::CProcessHandler(QObject *parent)
 	//connect(myProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(processOutput()));
 	//myProcess->execute(program);  
 
-	myProcess->execute("/bin/sh cd ~/SMA; /home/pi/SMA/QuerySMA.sh");
+	myProcess->execute("cd ~/SMA;/bin/sh /home/pi/SMA/QuerySMA.sh");
 
 
 	//if (!myProcess->waitForStarted())
