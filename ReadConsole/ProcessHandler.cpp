@@ -9,16 +9,19 @@ CProcessHandler::CProcessHandler(QObject *parent)
 	myProcess->setProcessChannelMode(QProcess::ForwardedChannels);
 
 	//connect(myProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(processOutput()));
-	myProcess->start(program);  
+	myProcess->execute(program);  
+#ifndef _WIN32
+	myProcess->execute("/home/pi/SMA/SMAspot/SMAspot", (QStringList() << "-v" << "-fing"));
+#endif
 
-	if (!myProcess->waitForStarted())
-		qDebug() << "Cant start the programm";
+	//if (!myProcess->waitForStarted())
+	//	qDebug() << "Cant start the programm";
 
-	if (!myProcess->waitForFinished(1000))
-	{
-		qCritical() << "wait-for-finished timeout";
-	}
-	qDebug() << myProcess->readAllStandardOutput();
+	//if (!myProcess->waitForFinished(1000))
+	//{
+	//	qCritical() << "wait-for-finished timeout";
+	//}
+	//qDebug() << myProcess->readAllStandardOutput();
 
 }
 
