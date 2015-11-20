@@ -11,7 +11,7 @@ CProcessHandler::CProcessHandler(QObject *parent)
 	//connect(myProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(processOutput()));
 	myProcess->execute(program);  
 #ifndef _WIN32
-	myProcess->execute("/home/pi/SMA/SMAspot/SMAspot", (QStringList() << "-v" << "-fing"));
+	myProcess->execute("/home/pi/SMA/QuerySMA.sh");
 #endif
 
 	//if (!myProcess->waitForStarted())
