@@ -7,7 +7,7 @@ CProcessHandler::CProcessHandler(QObject *parent)
 	myProcess = new QProcess(this);
 
 
-	myProcess->setProcessChannelMode(QProcess::ForwardedChannels);
+	//myProcess->setProcessChannelMode(QProcess::ForwardedChannels);
 
 	//connect(myProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(processOutput()));
 	//myProcess->execute(program);  
