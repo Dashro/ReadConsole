@@ -7,7 +7,7 @@ TARGET = ReadConsole
 DESTDIR = ../Win32/Debug
 QT += core
 CONFIG += debug console
-DEFINES += WIN64 QT_DLL
+DEFINES += QT_DLL
 INCLUDEPATH += . \
     ./GeneratedFiles/Debug
 DEPENDPATH += .
