@@ -13,17 +13,17 @@ CProcessHandler::CProcessHandler(QObject *parent)
 	//myProcess->execute(program);  
 
 	//myProcess->setWorkingDirectory("~/SMA");
-	myProcess->execute("/home/pi/SMA/SMAspot/SMAspot", QStringList() << "-v");
+	myProcess->start("/home/pi/SMA/SMAspot/SMAspot", QStringList() << "-v");
 
 
-	//if (!myProcess->waitForStarted())
-	//	qDebug() << "Cant start the programm";
+	if (!myProcess->waitForStarted())
+		qDebug() << "Cant start the programm";
 
-	//if (!myProcess->waitForFinished(1000))
-	//{
-	//	qCritical() << "wait-for-finished timeout";
-	//}
-	//qDebug() << myProcess->readAllStandardOutput();
+	if (!myProcess->waitForFinished(1000))
+	{
+		qCritical() << "wait-for-finished timeout";
+	}
+	qDebug() << myProcess->readAllStandardOutput();
 
 }
 
