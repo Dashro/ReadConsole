@@ -12,8 +12,8 @@ CProcessHandler::CProcessHandler(QObject *parent)
 	//connect(myProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(processOutput()));
 	//myProcess->execute(program);  
 
-	myProcess->setWorkingDirectory("~/SMA");
-	myProcess->execute("/bin/sh /home/pi/SMA/QuerySMA.sh");
+	//myProcess->setWorkingDirectory("~/SMA");
+	myProcess->execute("/home/pi/SMA/SMAspot/SMAspot", QStringList() << "v");
 
 
 	//if (!myProcess->waitForStarted())
