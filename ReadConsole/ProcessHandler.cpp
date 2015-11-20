@@ -19,7 +19,7 @@ CProcessHandler::CProcessHandler(QObject *parent)
 	if (!myProcess->waitForStarted())
 		qDebug() << "Cant start the programm";
 
-	if (!myProcess->waitForFinished(1000))
+	if (!myProcess->waitForFinished())
 	{
 		qCritical() << "wait-for-finished timeout";
 	}
